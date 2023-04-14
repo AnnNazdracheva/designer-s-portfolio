@@ -1,0 +1,149 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid #828282;
+}
+
+.header__container {
+  display: grid;
+}
+.header__menu {
+}
+.menu {
+}
+.menu__body {
+}
+.menu__list {
+  min-height: 5.625rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1.25rem;
+  row-gap: 0.3125rem;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
+.menu__item {
+}
+.menu__link {
+  font-weight: 700;
+  line-height: 122.222222%; /* 22/18 */
+  color: #828282;
+  transition: color 0.3s;
+}
+.menu__link.active,
+.menu__link:hover {
+  color: #070707;
+}
+.menu__icon {
+}
+.icon-menu {
+  display: none;
+}
+.icon-menu__line {
+}
+
+
+@media (max-width: 767.98px) {
+  .header {
+    margin-top: 3.625rem;
+    border: none;
+    background-color: inherit;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+
+  .menu__body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow: auto;
+    z-index: 1;
+    transition: left 0.3s;
+  }
+
+  .menu-open .menu__body {
+    left: 0;
+  }
+
+  .menu__list {
+    flex-direction: column;
+    padding: 4.125rem 1.625rem;
+    align-items: flex-start;
+    gap: 4.25rem;
+  }
+
+  .menu__link {
+    font-size: 2.125rem;
+    line-height: 123.529412%; /* 42/34 */
+  }
+
+  .icon-menu {
+    display: inline-block;
+    position: relative;
+    height: 1.3125rem;
+    width: 2.0625rem;
+    z-index: 5;
+  }
+
+  .icon-menu__line,
+  .icon-menu::before,
+  .icon-menu::after {
+    content: "";
+    position: absolute;
+    height: 0.1875rem;
+    width: 100%;
+    background-color: #070707;
+    left: 0;
+    transition: all 0.3s;
+  }
+  
+  .icon-menu__line {
+    top: calc(50% - 0.0938rem);
+  }
+  
+  .icon-menu::before {
+    top: 0;
+  }
+
+  .icon-menu::after {
+    bottom: 0;
+  }
+
+  .menu-open .icon-menu__line {
+    left: 50%;
+    width: 0;
+    background-color: #828282;
+  }
+
+  .menu-open .icon-menu::before {
+    top: calc(50% - 0.0938rem);
+    transform: rotate(45deg);
+    background-color: #828282;
+  }
+
+  .menu-open .icon-menu::after {
+    bottom: calc(50% - 0.0938rem);
+    transform: rotate(-45deg);
+    background-color: #828282;
+  }
+}
+
+
+
+@media (max-width: 479.98px) {    
+}
